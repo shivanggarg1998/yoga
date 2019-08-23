@@ -1,1 +1,1 @@
-web: pip install -r requirements.txt;gunicorn app:app --log-file=-
+web: pip install -r requirements.txt;python app.py
