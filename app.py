@@ -147,14 +147,14 @@ def index():
         cv2.putText(frame, "ACCURACY:" + str(round(per))+"%", (120, 40),
                     cv2.FONT_HERSHEY_SIMPLEX, 1.5, (25, 102, 25), 2, lineType=cv2.LINE_AA)
         # cv2.imshow("Output-Keypoints",frame)
-        cv2.waitKey(0)
+        # cv2.waitKey(0)
         frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         frame = Image.fromarray(frame, 'RGB')
         print(frame)
         buffered = BytesIO()
         frame.save(buffered, format="JPEG")
         img_str = base64.b64encode(buffered.getvalue())
-        return jsonify(img_str)
+        return img_str
 
 
 
